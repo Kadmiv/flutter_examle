@@ -1,8 +1,8 @@
+import 'package:co_share_app/ui/card_info_page/info_page.dart';
+import 'package:co_share_app/ui/main/main_page.dart';
+import 'package:co_share_app/ui/scanner_page/scanner_page.dart';
 import 'package:flutter/material.dart';
-
-import 'card_info_page/info_page.dart';
-import 'list_example/main.dart';
-import 'main/main_page.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 void main() => runApp(App());
 
@@ -21,13 +21,21 @@ class App extends StatelessWidget {
 }
 
 final String addressMainPage = "/";
-final String addressListPage = "/list_page";
+final String addressScannerPage = "/scanner_page";
 final String addressCardInfoPage = "/card_info";
 
 final appRoutes = {
   // When navigating to the "/" route, build the FirstScreen widget.
   addressMainPage: (context) => MainPage(),
-  // When navigating to the "/second" route, build the SecondScreen widget.
-  addressListPage: (context) => ListPage(),
   addressCardInfoPage: (context) => CardInfoPage(),
+  addressScannerPage: (context) => ScannerPage(),
 };
+
+
+
+_incrementCounter() async {
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  int counter = (prefs.getInt('counter') ?? 0) + 1;
+  print('Pressed $counter times.');
+  await prefs.setInt('counter', counter);
+}

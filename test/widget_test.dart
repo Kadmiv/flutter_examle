@@ -9,8 +9,6 @@ import 'package:co_share_app/app.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'file:///E:/work/co_share_app/co_share_app/lib/main/main_page.dart';
-
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
