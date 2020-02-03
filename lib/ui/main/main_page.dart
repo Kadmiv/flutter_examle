@@ -1,5 +1,6 @@
 import 'package:co_share_app/app.dart';
 import 'package:co_share_app/repo/models/card.dart';
+import 'package:co_share_app/ui/card_creation/card_creation.dart';
 import 'package:co_share_app/ui/card_info_page/info_page.dart';
 import 'package:co_share_app/ui/scanner_page/scanner_page.dart';
 import 'package:co_share_app/ui/settings/settings.dart';
@@ -31,13 +32,18 @@ class _MainPageState extends State<MainPage> {
 
   void _openInfoPageOfCard(String cardID) {
 //    Route route =        MaterialPageRoute(builder: (context) => CardInfoPage(cardID: cardID));
-    Route route = MaterialPageRoute(builder: (context) => ScannerPage());
+    Route route = MaterialPageRoute(builder: (context) => CardInfoPage());
     Navigator.push(context, route);
   }
 
   void _openSettings() {
 //    Route route =        MaterialPageRoute(builder: (context) => CardInfoPage(cardID: cardID));
     Route route = MaterialPageRoute(builder: (context) => SettingsPage());
+    Navigator.push(context, route);
+  }
+
+  void _openCardCreationPage() {
+    Route route = MaterialPageRoute(builder: (context) => CardCreationPage());
     Navigator.push(context, route);
   }
 
@@ -91,7 +97,7 @@ class _MainPageState extends State<MainPage> {
     );
 
     var floatingActionButton = new FloatingActionButton(
-      onPressed: _openInfoPage,
+      onPressed: _openCardCreationPage,
       tooltip: 'Increment',
       child: Icon(Icons.add),
     );

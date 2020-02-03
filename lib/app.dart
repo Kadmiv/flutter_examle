@@ -11,6 +11,7 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: new ThemeData(primaryColor: Color.fromRGBO(58, 66, 86, 1.0)),
 //      home: new ListPage(title: 'Lessons'),
@@ -30,8 +31,6 @@ final appRoutes = {
   addressCardInfoPage: (context) => CardInfoPage(),
   addressScannerPage: (context) => ScannerPage(),
 };
-
-
 
 _incrementCounter() async {
   SharedPreferences prefs = await SharedPreferences.getInstance();

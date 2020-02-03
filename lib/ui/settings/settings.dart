@@ -13,11 +13,7 @@ class SettingsPage extends StatefulWidget {
 class _SettingsPageState extends State<SettingsPage> {
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-        appBar: new AppBar(
-          title: new Text('Card creation'),
-        ),
-        body: new Center(
+    return  new Center(
           child: new Column(
             children: <Widget>[
               new Container(
@@ -26,7 +22,6 @@ class _SettingsPageState extends State<SettingsPage> {
               ),
               new Text("Some text"),
             ],
-          ),
         ));
   }
 }
